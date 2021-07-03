@@ -1,7 +1,11 @@
 import React from 'react';
+import NotesCollection from '../../components/NotesCollection.component';
 
 const IndexNote = () => (
-    <h1>hello this List of Note page</h1>
+    <React.Fragment>
+        <h2>Nots Collection</h2>
+        <NotesCollection />
+    </React.Fragment>
 )
 
 export default IndexNote;
