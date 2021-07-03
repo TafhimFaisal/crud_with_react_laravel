@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('note');
-});
+// Route::get('/', function () {
+//     return view('note');
+// });
+
+// Route::get('/{path?}', [
+//     'uses' => 'ReactController@show',
+//     'as' => 'react',
+//     'where' => ['path' => '.*']
+// ]);
+
+Route::get(
+    '/{path?}',
+    [ReactController::class, 'show']
+)->name('react')->where(['path' => '.*']);
+
 
