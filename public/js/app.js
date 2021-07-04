@@ -6657,7 +6657,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-store = (0,_redux_configurStore__WEBPACK_IMPORTED_MODULE_4__.default)();
+var store = (0,_redux_configurStore__WEBPACK_IMPORTED_MODULE_4__.default)();
 
 function NoteApp() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_3__.Provider, {
@@ -6732,7 +6732,7 @@ var LoginForm = function LoginForm() {
           noValidate: true,
           action: "",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            classNameName: "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               htmlFor: "InputEmail1",
               className: "form-label",
@@ -6753,7 +6753,7 @@ var LoginForm = function LoginForm() {
               children: "We'll never share your email with anyone else."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            classNameName: "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               htmlFor: "InputPassword",
               className: "form-label",
@@ -6824,7 +6824,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_actions_AuthActionCreator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/actions/AuthActionCreator */ "./resources/js/note/redux/actions/AuthActionCreator.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6841,7 +6843,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var RegistrationForm = function RegistrationForm() {
+
+
+var RegistrationForm = function RegistrationForm(_ref) {
+  var dispatchRegisterAction = _ref.dispatchRegisterAction;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       email = _useState2[0],
@@ -6857,31 +6863,42 @@ var RegistrationForm = function RegistrationForm() {
       confirmPassword = _useState6[0],
       setConfirmPassword = _useState6[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  var name = 'test';
+
+  var hendleOnsubmit = function hendleOnsubmit(evet) {
+    evet.preventDefault();
+    dispatchRegisterAction(name, email, password, function (data) {
+      return console.log(data);
+    }, function (data) {
+      return console.log(data);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "card",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "card-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
           className: "card-title",
           children: "New User ?"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
           className: "card-subtitle mb-2 text-muted fs-4",
           children: "Register here"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("form", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
           noValidate: true,
-          action: "",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          onSubmit: hendleOnsubmit,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "col-12",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                classNameName: "form-group",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                   htmlFor: "InputEmail1",
                   className: "form-label",
                   children: "Email"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                   type: "email",
                   className: "form-control",
                   id: "InputEmail1",
@@ -6891,21 +6908,21 @@ var RegistrationForm = function RegistrationForm() {
                     setEmail(e.target.value);
                   },
                   "aria-describedby": "emailHelp"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                   id: "emailHelp",
                   className: "form-text fs-6",
                   children: "We'll never share your email with anyone else."
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                classNameName: "form-group",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                   htmlFor: "InputPassword",
                   className: "form-label",
                   children: "Password"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                   type: "password",
                   className: "form-control",
                   id: "InputPassword",
@@ -6917,15 +6934,15 @@ var RegistrationForm = function RegistrationForm() {
                   "aria-describedby": "passwordHelp"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                classNameName: "form-group",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                   htmlFor: "confirmPassword",
                   className: "form-label",
                   children: "Confirm Password"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                   type: "password",
                   className: "form-control",
                   id: "confirmPassword",
@@ -6937,9 +6954,9 @@ var RegistrationForm = function RegistrationForm() {
                   "aria-describedby": "confirmPassword"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                 type: "submit",
                 className: "btn btn-primary mt-2",
                 children: "Register"
@@ -6952,7 +6969,19 @@ var RegistrationForm = function RegistrationForm() {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RegistrationForm);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    dispatchRegisterAction: function dispatchRegisterAction(name, email, password, onSuccess, onError) {
+      return dispatch((0,_redux_actions_AuthActionCreator__WEBPACK_IMPORTED_MODULE_2__.registerUser)({
+        name: name,
+        email: email,
+        password: password
+      }, onSuccess, onError));
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(null, mapDispatchToProps)(RegistrationForm));
 
 /***/ }),
 
@@ -7148,6 +7177,51 @@ var CreateNote = function CreateNote() {
 
 /***/ }),
 
+/***/ "./resources/js/note/redux/actions/AuthActionCreator.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/note/redux/actions/AuthActionCreator.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "registerUser": () => (/* binding */ registerUser)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./resources/js/note/redux/constants.js");
+
+var registerUser = function registerUser(data, onSuccess, onError) {
+  return {
+    type: _constants__WEBPACK_IMPORTED_MODULE_0__.API,
+    payload: {
+      method: 'POST',
+      url: '/api/user/sign-up',
+      data: data,
+      success: function success(response) {
+        return setUserInfo(response);
+      },
+      postProcessSuccess: onSuccess,
+      postProcessError: onError
+    }
+  };
+};
+
+var setUserInfo = function setUserInfo(data) {
+  var parseToken = JSON.parse(atob(data.access_token.split('.')[1]));
+  var userInfo = {
+    ID: parseToken.jti,
+    token: data.access_token,
+    isLogin: true
+  };
+  localStorage.setItem('USER_INFO', userInfo);
+  return {
+    type: _constants__WEBPACK_IMPORTED_MODULE_0__.SET_USER_INFO,
+    payload: userInfo
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/note/redux/configurStore.js":
 /*!**************************************************!*\
   !*** ./resources/js/note/redux/configurStore.js ***!
@@ -7210,7 +7284,7 @@ var apiMiddleware = function apiMiddleware(_ref) {
   return function (next) {
     return function (action) {
       if (action.type !== _constants__WEBPACK_IMPORTED_MODULE_1__.API) return next(action);
-      var BASE_URL = 'http://reactcontactapp.test/';
+      var BASE_URL = 'http://reactcontactapp.test';
       var _action$payload = action.payload,
           method = _action$payload.method,
           url = _action$payload.url,
@@ -7228,6 +7302,7 @@ var apiMiddleware = function apiMiddleware(_ref) {
       })["catch"](function (err) {
         if (!err.response) console.warn(err);else {
           if (err.response.data) {
+            // console.log(err.response.data);
             if (postProcessError) postProcessError(err.response.data);
           }
         }
@@ -7280,7 +7355,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var defaultState = {
-  ID: parseToken.id,
+  ID: null,
   email: null,
   token: null,
   isLogin: false

@@ -12,7 +12,7 @@ const LoginForm = () => {
                     <h2 className="card-title">Have an Account ?</h2>
                     <h4 className="card-subtitle mb-2 text-muted fs-4">Login hare</h4>
                     <form noValidate action="">
-                        <div classNameName="form-group">
+                        <div className="form-group">
                             <label htmlFor="InputEmail1" className="form-label">Email</label>
                             <input
                                 type="email"
@@ -25,7 +25,7 @@ const LoginForm = () => {
                             />
                             <div id="emailHelp" className="form-text fs-6">We'll never share your email with anyone else.</div>
                         </div>
-                        <div classNameName="form-group">
+                        <div className="form-group">
                             <label htmlFor="InputPassword" className="form-label">Password</label>
                             <input
                                 type="password"

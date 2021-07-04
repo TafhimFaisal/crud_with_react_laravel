@@ -1,6 +1,6 @@
 import * as constants from '../constants';
 const defaultState = {
-    ID: parseToken.id,
+    ID: null,
     email:null,
     token:null,
     isLogin:false

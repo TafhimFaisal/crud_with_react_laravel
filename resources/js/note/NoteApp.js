@@ -7,8 +7,8 @@ import { Provider } from 'react-redux';
 import configurStore from './redux/configurStore';
 
 
+const store = configurStore();
 
-store = configurStore();
 function NoteApp() {
     return (
         <Provider store={store}>

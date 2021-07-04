@@ -89,7 +89,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        dd($user);
+        // dd($user);
         // $user = User::find($request['user_id']);
 
         if(array_key_exists("role",$request)){
