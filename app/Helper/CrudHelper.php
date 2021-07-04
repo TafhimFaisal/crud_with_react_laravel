@@ -15,6 +15,8 @@ class CrudHelper {
     protected $type;
     protected $status_code = [
         'success'=>200,
+        'delete'=>200,
+        'update'=>200,
         'error'=>500
     ];
 
@@ -29,7 +31,7 @@ class CrudHelper {
     public function store($request,$validat)
     {
         if($validat->validator->fails()){
-            return json_encode([
+            return response()->json([
                 'message' => 'somthing went wrong',
                 'data' => $validat->validator->errors(),
                 'validation' => false,
@@ -51,7 +53,7 @@ class CrudHelper {
 
         $data = $this->model->create($data);
 
-        return json_encode([
+        return response()->json([
             'message' => $this->type.' Stored Successfully',
             'data' => $data,
             'validation' => true,
@@ -71,9 +73,9 @@ class CrudHelper {
         }
 
         $model->delete();
-        return json_encode([
+        return response()->json([
             'message' => $this->type.' Deleted Successfully'
-        ],$this->status_code['success']);
+        ],$this->status_code['delete']);
 
     }
 
@@ -81,7 +83,7 @@ class CrudHelper {
     {
 
         if($validat->validator->fails()){
-            return json_encode([
+            return response()->json([
                 'message' => 'somthing went wrong',
                 'data' => $validat->validator->errors(),
                 'validation' => false,
@@ -103,12 +105,12 @@ class CrudHelper {
         }
 
         $model->update($data);
-        return json_encode([
+        return response()->json([
             'message' => $this->type.' is successfully updated.',
             'data' => $model,
             'validation' => true,
             'type' => 'update'
-        ],$this->status_code['success']);
+        ],$this->status_code['update']);
 
     }
 
